@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-html {
-    background: #020617;
-}
-
 body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     min-height: 100vh;
@@ -19,12 +15,111 @@ body {
     line-height: 1.6;
 }
 
+body {
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 🎨 Theme Switch */
+.theme-switch {
+    display: inline-flex;
+    gap: 6px;
+    padding: 4px;
+    border-radius: 999px;
+
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+
+    margin: 16px 16px 16px 16px;
+    align-self: flex-end;
+}
+
+.theme-switch button {
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: #93c5fd;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.theme-switch button:hover {
+    background: rgba(255,255,255,0.2);
+    color: #bfdbfe;
+}
+
+.theme-switch button.active {
+    background: #3b82f6;
+    color: white;
+}
+
+/* 🌗 THEMES */
+
+/* DARK (default) */
+:root[data-theme="dark"] body {
+    background:
+        radial-gradient(circle at 20% 0%, rgba(30,41,59,0.8), transparent 50%),
+        radial-gradient(circle at 80% 0%, rgba(15,23,42,0.8), transparent 50%),
+        #020617;
+    color: white;
+}
+
+/* LIGHT */
+:root[data-theme="light"] body {
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+/* Light UI adjustments */
+:root[data-theme="light"] .theme-switch {
+    background: rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+:root[data-theme="light"] .theme-switch button {
+   color: #60a5fa; /* light blue */
+}
+
+:root[data-theme="light"] .theme-switch button.active {
+    color: white;
+}
+
+:root[data-theme="light"] .theme-switch button:hover {
+    background: rgba(0,0,0,0.1);
+}
+
+:root[data-theme="light"] .card,
+:root[data-theme="light"] .chips span,
+:root[data-theme="light"] .contact-list a {
+    background: rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
 /* 🌐 Floating language switch */
 .lang-switch {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 16px;
+    right: 16px;
     z-index: 100;
+}
+
+/* Light mode adjustments for language switch */
+:root[data-theme="light"] .lang-switch button {
+    color: #1e3a8a; /* dark blue text */
+    background: rgba(0,0,0,0.05); /* optional: slightly visible background */
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+:root[data-theme="light"] .lang-switch button:hover {
+    background: rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .lang-switch button,
@@ -53,8 +148,8 @@ body {
 /* 💬 Floating Contact Button */
 .contact-btn {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 40px;
+    right: 16px;
     text-decoration: none;
     font-size: 20px;
 
@@ -68,26 +163,44 @@ body {
     z-index: 100;
 }
 
+:root[data-theme="light"] .contact-btn {
+    background: rgba(59, 130, 246, 0.08);   /* soft blue tint */
+    color: #1e3a8a;                         /* muted blue text */
+    border: 1px solid rgba(59, 130, 246, 0.18);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
+}
+
+:root[data-theme="light"] .contact-btn:hover {
+    background: rgba(59, 130, 246, 0.16);
+}
+
 .contact-btn:hover {
     transform: scale(1.1);
     background: rgba(255,255,255,0.2);
 }
 
 /* 👤 Hero */
-.role {
-    color: rgba(255,255,255,0.7);
+.role,
+.work-setup {
     font-size: 18px;
     margin-top: 4px;
+    transition: color 0.3s ease;
 }
 
-.work-setup {
+/* 🌙 DARK */
+:root[data-theme="dark"] .role,
+:root[data-theme="dark"] .work-setup {
     color: rgba(255,255,255,0.7);
-    font-size: 18px;
-    margin-top: 4px;
+}
+
+/* ☀️ LIGHT */
+:root[data-theme="light"] .role,
+:root[data-theme="light"] .work-setup {
+    color: rgba(15,23,42,0.7); /* slate-900 with opacity */
 }
 
 .hero {
-    padding-top: clamp(80px, 15vw, 120px);
+    padding-top: clamp(40px, 15vw, 120px);
 }
 
 .hero {
@@ -157,7 +270,7 @@ body {
     max-width: 800px;
     margin-left: 20px;
     margin-right: 20px;
-    padding: 60px 20px;
+    padding: 30px 20px;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeIn 0.8s forwards;
@@ -237,7 +350,7 @@ body {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
 
-    color: springgreen;
+    color: #3b82f6;
     text-decoration: none;
     font-size: 14px;
 
