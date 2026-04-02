@@ -114,7 +114,7 @@ a {
 :root[data-theme="light"] .lang-switch button {
     color: #1e3a8a; /* dark blue text */
     background: rgba(0,0,0,0.05); /* optional: slightly visible background */
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid rgba(59, 130, 246, 0.18);
 }
 
 :root[data-theme="light"] .lang-switch button:hover {
@@ -128,7 +128,7 @@ a {
     backdrop-filter: blur(12px);
     background: rgba(255,255,255,0.1);
     border: 1px solid rgba(255,255,255,0.2);
-    padding: 10px 14px;
+    padding: 8px 12px;
     border-radius: 12px;
     color: white;
     cursor: pointer;
@@ -140,9 +140,14 @@ a {
     letter-spacing: 0.5px;
 }
 
+:root[data-theme="light"] .lang-switch {
+    background: rgba(59, 130, 246, 0.08);   /* soft blue tint */
+    color: #1e3a8a;                         /* muted blue text */
+    border-radius: 12px;
+}
+
 .lang-switch button:hover {
     background: rgba(255,255,255,0.2);
-    box-shadow: 0 0 20px rgba(255,255,255,0.2);
 }
 
 /* 💬 Floating Contact Button */
@@ -206,6 +211,77 @@ a {
 .hero {
     text-align: center;
     padding: 120px 20px 60px;
+}
+
+/* Container stays the same */
+.hero-actions {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Base (same philosophy as contact-btn) */
+.cv-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    padding: 6px 12px;        /* 👈 controls size */
+    height: auto;             /* 👈 remove fixed height */
+    width: auto;              /* 👈 remove fixed width */
+
+    border-radius: 999px;     /* 👈 capsule */
+    font-size: 13px;
+    text-decoration: none;
+
+    backdrop-filter: blur(12px);
+    transition: all 0.25s ease;
+    animation: fadeIn 0.6s ease forwards;
+    animation-delay: 0.15s;
+}
+
+/* 🌞 Light mode (match contact-btn) */
+:root[data-theme="light"] .cv-btn {
+    background: rgba(59, 130, 246, 0.08);
+    color: #1e3a8a;
+    border: 1px solid rgba(59, 130, 246, 0.18);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
+}
+
+/* 🌙 Dark mode */
+:root[data-theme="dark"] .cv-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: #e5e7eb;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* ✨ Hover (same behavior as contact-btn but smoother) */
+.cv-btn:hover {
+    transform: scale(1.08);
+}
+
+/* Light hover refinement */
+:root[data-theme="light"] .cv-btn:hover {
+    background: rgba(59, 130, 246, 0.16);
+}
+
+/* Dark hover refinement */
+:root[data-theme="dark"] .cv-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+/* 👇 Click feedback (fix your current too-strong scale) */
+.cv-btn:active {
+    transform: scale(0.95);
+}
+
+/* 📱 Touch devices */
+@media (hover: none) {
+    .cv-btn:hover {
+        transform: none;
+    }
 }
 
 /* 👤 Avatar Wrapper */
