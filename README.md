@@ -9,13 +9,15 @@ Easy to customize, fully responsive, and ready to deploy.
 
 - 🎯 Minimal & modern design
 - 👤 Hero section (avatar, role, availability)
+- 💼 CV download button
 - 🧠 About Me section
 - 🌟 Soft & Hard Skills
 - 🛠️ Tools section
 - 💼 Experience & Projects
 - 📮 Contact & Social links
+- 💬 Contact floating button
 - 🌐 Multi-language support (EN / ES, extendable)
-- 🌗 Theme support
+- 🌗 Dark/Light Theme Support
 - ⚡ Smooth animations
 - 📱 Fully responsive (mobile-friendly)
 - 🚫 No frameworks (pure HTML, CSS, JS)
