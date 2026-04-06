@@ -15,6 +15,7 @@ Easy to customize, fully responsive, and ready to deploy.
 - 💼 Experience & Projects
 - 📮 Contact & Social links
 - 🌐 Multi-language support (EN / ES, extendable)
+- 🌗 Theme support
 - ⚡ Smooth animations
 - 📱 Fully responsive (mobile-friendly)
 - 🚫 No frameworks (pure HTML, CSS, JS)
