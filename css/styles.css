@@ -125,11 +125,17 @@ a {
 .lang-switch button,
 
 .contact-btn {
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(10px);
     background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 6px 10px;
+    border: 1px solid rgba(255,255,255,0.15);
+
+    padding: 4px 8px;
     border-radius: 12px;
+
+    font-size: 12px; /* 👈 key fix */
+
+    transform: translateZ(0); /* 👈 stabilize */
+
     color: white;
     cursor: pointer;
     transition: 0.3s;
