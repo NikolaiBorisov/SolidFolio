@@ -29,7 +29,10 @@ const translations = {
         sectionProjects: "📁 Projects",
         sectionContact: "📮 Contact",
         contacts: ["📧 email@example.com", "📱 +123 456 789"],
-        sectionConnect: "🔗 Connect"
+        sectionConnect: "🔗 Connect",
+        statYears: "💼 Years",
+        statProjects: "🛠 Projects",
+        statApps: "📱 Apps"
     },
     "🇪🇸 ES": {
         role: "Tu Cargo",
@@ -52,7 +55,10 @@ const translations = {
         sectionProjects: "📁 Proyectos",
         sectionContact: "📮 Contacto",
         contacts: ["📧 email@example.com", "📱 +123 456 789"],
-        sectionConnect: "🔗 Conectar"
+        sectionConnect: "🔗 Conectar",
+        statYears: "💼 Años",
+        statProjects: "🛠 Proyectos",
+        statApps: "📱 Aplic."
     }
 };
 
@@ -100,6 +106,9 @@ function applyTranslations() {
     fadeText(document.getElementById("projects-title"), t.sectionProjects);
     fadeText(document.getElementById("contact-title"), t.sectionContact);
     fadeText(document.getElementById("connect-title"), t.sectionConnect);
+    fadeText(document.getElementById("stat-years"), t.statYears);
+    fadeText(document.getElementById("stat-projects"), t.statProjects);
+    fadeText(document.getElementById("stat-apps"), t.statApps);
 
     document.querySelectorAll("#soft-skills .chips span").forEach((el, i) => {
         const value = t.softSkills[i];
