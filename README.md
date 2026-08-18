@@ -56,6 +56,3 @@ Copy → Paste → Adjust → Save → Use
 
 ## Screenshots
 ![Hero Section](Screenshots/1.png)
-![Soft & Hard Skills, Tools Section](Screenshots/2.png)
-![Experience & Projects Section](Screenshots/3.png)
-![Contacts & Links Section](Screenshots/4.png)
