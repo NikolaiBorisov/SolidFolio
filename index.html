@@ -3,54 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Portfolio</title>
+<meta name="theme-color" content="#f7fbff">
+<title>SolidFolio Portfolio</title>
 <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
+<div class="scroll-progress" aria-hidden="true"></div>
 
-<!-- 🎨 Theme Toggle -->
-<div class="theme-switch">
-    <button data-theme="light">Light</button>
-    <button data-theme="dark">Dark</button>
-    <button data-theme="auto" class="active">Auto</button>
-</div>
-
-<!-- 🌐 Language Picker -->
-<div class="lang-switch">
-    <button id="langBtn">🇬🇧 EN</button>
-</div>
+<header class="topbar" aria-label="Portfolio controls">
+    <a class="brand-mark" href="#top" aria-label="Back to top">SF</a>
+    <nav class="mini-nav" aria-label="Main sections">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="toolbar">
+        <div class="theme-switch" aria-label="Theme">
+            <button data-theme="light" type="button">Light</button>
+            <button data-theme="dark" type="button">Dark</button>
+            <button data-theme="auto" class="active" type="button">Auto</button>
+        </div>
+        <button id="langBtn" class="lang-btn" type="button" aria-label="Switch language">🇬🇧 EN</button>
+    </div>
+</header>
 
 <!-- 👤 Hero Section -->
-<section class="hero">
-    <div class="avatar-wrapper">
+<section id="top" class="hero">
+    <div class="avatar-wrapper reveal">
         <img src="img/your_avatar.png" alt="avatar" class="avatar">
         <span class="status-badge">Open to work</span>
     </div>
 
-    <h1>Your Name</h1>
-    <p class="role">Your Position</p>
+    <p class="eyebrow reveal">Portfolio profile</p>
+    <h1 class="reveal">Your Name</h1>
+    <p class="role reveal">Your Position</p>
     <p class="work-setup">Remote • On-site • Hybrid</p>
-         <div class="stats">
-    <div class="stat">
-        <div class="stat-value">5+</div>
-        <span id="stat-years">💼 Years</span>
+    <div class="stats" aria-label="Career stats">
+        <div class="stat">
+            <div class="stat-value">5+</div>
+            <span id="stat-years">Years</span>
+        </div>
+        <div class="stat">
+            <div class="stat-value">8</div>
+            <span id="stat-projects">Projects</span>
+        </div>
+        <div class="stat">
+            <div class="stat-value">4</div>
+            <span id="stat-apps">Apps</span>
+        </div>
     </div>
-    <div class="stat">
-        <div class="stat-value">8</div>
-        <span id="stat-projects">🛠 Projects</span>
-    </div>
-    <div class="stat">
-        <div class="stat-value">4</div>
-        <span id="stat-apps">📱 Apps</span>
-    </div>
-</div>
 
     <div class="hero-actions">
-   <a href="assets/my_cv.pdf" target="_blank" class="cv-btn">
-    🗂️ <span id="cv-label">CV</span>
-</a>
-</div>
+        <a href="assets/my_cv.pdf" target="_blank" class="cv-btn" rel="noopener noreferrer">
+            <span id="cv-label">View CV</span>
+        </a>
+        <a href="#projects" class="secondary-btn">See work</a>
+    </div>
 
 </section>
 
@@ -64,7 +74,7 @@
 
 <!-- 🧠 Soft Skills -->
 <section id="soft-skills" class="section">
-    <h2 id="soft-skills-title">🧠 Soft Skills</h2>
+    <h2 id="soft-skills-title">Soft Skills</h2>
     <div class="chips">
         <span>Communication</span>
         <span>Teamwork</span>
@@ -75,7 +85,7 @@
 
 <!-- 🛠️ Hard Skills -->
 <section id="hard-skills" class="section">
-    <h2 id="hard-skills-title">🛠️ Hard Skills</h2>
+    <h2 id="hard-skills-title">Hard Skills</h2>
     <div class="chips">
         <span>Git</span>
         <span>UI/UX</span>
@@ -86,7 +96,7 @@
 
 <!-- 🧰 Tools -->
 <section id="tools" class="section">
-    <h2 id="tools-title">🧰 Tools</h2>
+    <h2 id="tools-title">Tools</h2>
     <div class="chips">
         <span>Figma</span>
         <span>Xcode</span>
@@ -97,7 +107,7 @@
 
 <!-- 💼 Experience -->
 <section id="experience" class="section">
-    <h2 id="experience-title">💼 Experience</h2>
+    <h2 id="experience-title">Experience</h2>
     <div class="card">Employee @ Company1</div>
     <div class="card">Employee @ Company2</div>
     <div class="card">Employee @ Company3</div>
@@ -106,22 +116,26 @@
 
 <!-- 📁 Projects -->
 <section id="projects" class="section">
-    <h2 id="projects-title">📁 Projects</h2>
+    <h2 id="projects-title">Projects</h2>
+    <div class="project-tools" aria-label="Project tools">
+        <input id="projectSearch" type="search" placeholder="Search projects" autocomplete="off">
+        <span id="projectCount" aria-live="polite">5 projects</span>
+    </div>
     <div class="projects-grid">
-        <div class="card" data-url="https://example.com/project2">Your Project1</div>
-        <div class="card" data-url="https://example.com/project2">Your Project2</div>
-        <div class="card" data-url="https://example.com/project3">Your Project3</div>
-        <div class="card" data-url="https://example.com/project4">Your Project4</div>
-        <div class="card" data-url="https://example.com/project5">Your Project5</div>
+        <div class="card" data-url="https://example.com/project1" data-tags="app ui frontend">Your Project1</div>
+        <div class="card" data-url="https://example.com/project2" data-tags="website design frontend">Your Project2</div>
+        <div class="card" data-url="https://example.com/project3" data-tags="mobile app product">Your Project3</div>
+        <div class="card" data-url="https://example.com/project4" data-tags="automation tool workflow">Your Project4</div>
+        <div class="card" data-url="https://example.com/project5" data-tags="dashboard data ui">Your Project5</div>
         <!-- Add more: copy and paste the line above, change the title & URL, then save changes (Command + S on MacOS) -->
     </div>
 </section>
 
 <!-- 📮 Contact -->
 <section id="contact" class="section">
-    <h2 id="contact-title">📮 Contact</h2>
+    <h2 id="contact-title">Contact</h2>
     <div class="contact-list">
-       <a href="mailto:email@example.com">📧 email@example.com</a>
+       <a href="mailto:email@example.com" data-copy="email@example.com">📧 email@example.com</a>
        <a href="tel:+123456789">📱 +123 456 789</a>
        <!-- Add more: copy and paste the line above, change the href and title, then save changes (Command + S on MacOS) -->
     </div>
@@ -129,7 +143,7 @@
 
 <!-- 🌐 Connect-->
 <section class="connect-section">
-    <h2 id="connect-title">🌐 Connect</h2>
+    <h2 id="connect-title">Connect</h2>
     <div class="links">
         <a href="https://github.com/example" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://linkedin.com/in/example" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -139,7 +153,7 @@
 </section>
 
 <!-- 💬 Floating Contact -->
-<a href="https://wa.me/123456789" class="contact-btn">💬</a>
+<a href="https://wa.me/123456789" class="contact-btn" aria-label="Message on WhatsApp">✦</a>
 
 <script src="js/script.js"></script>
 </body>
